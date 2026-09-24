@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
+import Counter from "./Counter";
 const Navbar = () => {
   const menuItems = (
     <>
@@ -61,12 +62,12 @@ const Navbar = () => {
       <div className="navbar-end">
         <Link href={"/my-plan"}>
           <button className="btn btn-ghost">
-            Plan <div className="badge badge-sm badge-secondary">0</div>
+            Plan <Counter mode="plan" />
           </button>
         </Link>
         <Link href={"/my-plan"}>
           <button className="btn btn-ghost">
-            Saved <div className="badge badge-sm badge-secondary">0</div>
+            Saved <Counter mode="save" />
           </button>
         </Link>
       </div>

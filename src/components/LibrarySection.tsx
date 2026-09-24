@@ -1,4 +1,4 @@
-import { IWorkout } from "@/types/worksout.type";
+import { IWorkout } from "@/types/workout.type";
 import React, { useContext } from "react";
 import WorkoutCard from "./WorkoutCard";
 import Link from "next/link";

@@ -1,4 +1,5 @@
-import { IWorkout } from "@/types/worksout.type";
+import AddPlanButton from "@/components/AddPlanButton";
+import { IWorkout } from "@/types/workout.type";
 import Image from "next/image";
 import React from "react";
 type WorkoutDetailsPageProps = { params: Promise<{ id: string }> };
@@ -97,9 +98,7 @@ const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
         </div>
         {/* Buttons */}
         <div className="flex gap-3 pt-2">
-          <button className="btn btn-primary flex-1">
-            Add to today&apos;s plan
-          </button>
+          <AddPlanButton workout={workoutDetailsData} />
           <button className="btn btn-outline btn-secondary flex-1">
             Save for later
           </button>

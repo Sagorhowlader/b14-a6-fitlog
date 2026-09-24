@@ -1,10 +1,16 @@
 "use client";
-import { IWorkout } from "@/types/worksout.type";
+import { IWorkout } from "@/types/workout.type";
 import React, { createContext, useState } from "react";
+type WorkoutContextType = {
+  planWorkoutData: IWorkout[];
+  setPlanWorkoutData: React.Dispatch<React.SetStateAction<IWorkout[]>>;
+  saveWorkoutData: IWorkout[];
+  setSaveWorkoutData: React.Dispatch<React.SetStateAction<IWorkout[]>>;
+};
 type WorkoutContextProps = {
   children: React.ReactNode;
 };
-const WorkoutContext = createContext({});
+export const WorkoutContext = createContext<WorkoutContextType | null>(null);
 const WorkoutProvider = ({ children }: WorkoutContextProps) => {
   const [planWorkoutData, setPlanWorkoutData] = useState<IWorkout[]>([]);
   const [saveWorkoutData, setSaveWorkoutData] = useState<IWorkout[]>([]);
