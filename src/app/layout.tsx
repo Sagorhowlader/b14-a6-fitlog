@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       data-theme="dark"
     >
-      <body className="">
+      <body className="container mx-auto">
         <Navbar />
         {children}
         <Footer />
