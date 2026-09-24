@@ -14,7 +14,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar shadow-sm">
+    <div className="navbar shadow-sm mb-11">
       <div className="navbar-start">
         {/* Mobile Menu Design */}
         <div className="dropdown">
