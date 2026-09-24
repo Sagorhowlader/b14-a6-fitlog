@@ -1,5 +1,5 @@
 import { IWorkout } from "@/types/worksout.type";
-import React from "react";
+import React, { useContext } from "react";
 import WorkoutCard from "./WorkoutCard";
 import Link from "next/link";
 const getWorkoutData = async () => {
