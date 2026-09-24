@@ -6,7 +6,7 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        <Link href={"/workout"}>Workout</Link>
+        <Link href={"/"}>Workout</Link>
       </li>
       <li>
         <Link href={"/my-plan"}>My Plan</Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <Link href={"/workout"}>
+        <Link href={"/my-plan"}>
           <button className="btn btn-ghost">
             Plan <div className="badge badge-sm badge-secondary">0</div>
           </button>
