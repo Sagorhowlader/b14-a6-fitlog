@@ -2,6 +2,7 @@
 import { WorkoutContext } from "@/context/WorkoutContext";
 import { IWorkout } from "@/types/workout.type";
 import { useContext } from "react";
+import { CiBookmark } from "react-icons/ci";
 import { Bounce, toast } from "react-toastify";
 type SaveButtonProps = {
   workout: IWorkout;
@@ -36,9 +37,10 @@ const SaveButton = ({ workout }: SaveButtonProps) => {
   };
   return (
     <button
-      className="btn btn-primary flex-1"
+      className="btn w-48 rounded-2xl bg-black"
       onClick={() => handleSavePlanButton(workout)}
     >
+      <CiBookmark />
       Save for later
     </button>
   );

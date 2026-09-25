@@ -13,9 +13,9 @@ const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
   const { id } = await params;
   const workoutDetailsData: IWorkout = await getWorkoutDetails(id);
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-7 max-w-6xl mx-auto">
+    <section className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 p-7 lg:grid-cols-2">
       {/* Left Side - Image */}
-      <div className="rounded-2xl overflow-hidden bg-base-200 shadow-md">
+      <div>
         <Image
           src={workoutDetailsData.image}
           width={500}
@@ -25,13 +25,13 @@ const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
         />
       </div>
       {/* Right Side Content */}
-      <div className="flex flex-col gap-5 bg-base-100 rounded-2xl p-6 shadow-md border border-base-200">
+      <div className="w-full flex flex-col gap-5 rounded-2xl shadow-md">
         {/* Title & Description */}
         <div>
-          <h1 className="text-3xl font-bold text-base-content">
+          <h1 className="font-oswald text-3xl font-bold text-base-content uppercase">
             {workoutDetailsData.name}
           </h1>
-          <p className="text-base-content/60 mt-2 leading-relaxed">
+          <p className="text-base-content/60 mt-2 text-lg leading-relaxed">
             {workoutDetailsData.description}
           </p>
         </div>
@@ -41,7 +41,7 @@ const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
             (muscle: string, index: number) => (
               <div
                 key={index}
-                className="badge badge-primary font-medium px-3 py-3"
+                className="badge rounded-xl bg-fitlog-primary p-2.5 text-xs font-bold text-black"
               >
                 {muscle}
               </div>
@@ -49,56 +49,67 @@ const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
           )}
         </div>
         {/* Workout Information */}
-        <div className="rounded-xl border border-base-200 overflow-hidden">
-          <div className="flex justify-between px-4 py-3 bg-base-200/50">
+        <div className="overflow-hidden rounded-xl border border-base-200">
+          <div className="flex justify-between border-b border-gray-700/50 bg-base-200 px-4 py-3">
             <div className="font-medium text-base-content/60">EQUIPMENT</div>
             <div className="font-semibold">{workoutDetailsData.equipment}</div>
           </div>
-          <div className="flex justify-between px-4 py-3">
+
+          <div className="flex justify-between border-b border-gray-700/50 bg-base-200 px-4 py-3">
             <div className="font-medium text-base-content/60">DIFFICULTY</div>
             <div className="font-semibold">{workoutDetailsData.difficulty}</div>
           </div>
-          <div className="flex justify-between px-4 py-3 bg-base-200/50">
-            <div className="font-medium text-base-content/60"> SETS </div>
+
+          <div className="flex justify-between border-b border-gray-700/50 bg-base-200 px-4 py-3">
+            <div className="font-medium text-base-content/60">SETS</div>
             <div className="font-semibold">{workoutDetailsData.sets}</div>
           </div>
-          <div className="flex justify-between px-4 py-3">
-            <div className="font-medium text-base-content/60"> REPS </div>
+
+          <div className="flex justify-between border-b border-gray-700/50 bg-base-200 px-4 py-3">
+            <div className="font-medium text-base-content/60">REPS</div>
             <div className="font-semibold">{workoutDetailsData.reps}</div>
           </div>
-          <div className="flex justify-between px-4 py-3 bg-base-200/50">
+
+          <div className="flex justify-between border-b border-gray-700/50 bg-base-200 px-4 py-3">
             <div className="font-medium text-base-content/60">DURATION</div>
-            <div className="font-semibold">{workoutDetailsData.duration}</div>
-          </div>
-          <div className="flex justify-between px-4 py-3">
-            <div className="font-medium text-base-content/60">CALORIES</div>
             <div className="font-semibold">
-              {workoutDetailsData.caloriesBurned}
+              {workoutDetailsData.duration} min
             </div>
           </div>
-          <div className="flex justify-between px-4 py-3 bg-base-200/50">
+
+          <div className="flex justify-between border-b border-gray-700/50 bg-base-200 px-4 py-3">
+            <div className="font-medium text-base-content/60">CALORIES</div>
+            <div className="font-semibold">
+              {workoutDetailsData.caloriesBurned} kcal
+            </div>
+          </div>
+
+          <div className="flex justify-between bg-base-200 px-4 py-3">
             <div className="font-medium text-base-content/60">RATING</div>
             <div className="font-semibold">{workoutDetailsData.rating}</div>
           </div>
         </div>
         {/* Instructions */}
         <div>
-          <h2 className="text-xl font-bold mb-3"> Instructions </h2>
+          <h2 className="mb-3 text-[16px] font-extrabold">Instructions</h2>
+
           <ul className="space-y-2">
             {workoutDetailsData.instructions.map(
               (ins: string, index: number) => (
                 <li
                   key={index}
-                  className="flex gap-3 text-base-content/70 leading-relaxed"
+                  className="flex gap-3 leading-relaxed text-base-content/70"
                 >
-                  {ins}
+                  <span className="font-bold">{index + 1}.</span>
+
+                  <span>{ins}</span>
                 </li>
               ),
             )}
           </ul>
         </div>
         {/* Buttons */}
-        <div className="flex gap-3 pt-2">
+        <div className="flex flex-col gap-3 pt-2 sm:flex-row">
           <AddPlanButton workout={workoutDetailsData} />
           <SaveButton workout={workoutDetailsData} />
         </div>
