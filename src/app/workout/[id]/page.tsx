@@ -1,4 +1,5 @@
-import AddPlanButton from "@/components/AddPlanButton";
+import AddPlanButton from "@/components/WorkoutDetails/AddPlan/AddPlanButton";
+import SaveButton from "@/components/WorkoutDetails/SavePlan/SaveButton";
 import { IWorkout } from "@/types/workout.type";
 import Image from "next/image";
 import React from "react";
@@ -99,9 +100,7 @@ const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
         {/* Buttons */}
         <div className="flex gap-3 pt-2">
           <AddPlanButton workout={workoutDetailsData} />
-          <button className="btn btn-outline btn-secondary flex-1">
-            Save for later
-          </button>
+          <SaveButton workout={workoutDetailsData} />
         </div>
       </div>
     </section>

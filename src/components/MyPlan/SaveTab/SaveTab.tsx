@@ -1,21 +1,21 @@
 "use client";
 import React, { useContext } from "react";
-import MyPlanCard from "./MyPlanCard";
 import { WorkoutContext } from "@/context/WorkoutContext";
+import SaveCard from "@/components/MyPlan/SaveTab/SaveCard";
 
-const MyPlan = () => {
+const SaveTab = () => {
   const context = useContext(WorkoutContext);
   if (!context) {
     throw new Error("MyPlanCard must be used inside WorkoutProvider");
   }
-  const { planWorkoutData } = context;
+  const { saveWorkoutData } = context;
   return (
     <div className="flex flex-col gap-3.5 bg-base-200">
-      {planWorkoutData.map((workoutData) => (
-        <MyPlanCard key={workoutData.id} workout={workoutData} />
+      {saveWorkoutData.map((saveWorkoutData) => (
+        <SaveCard key={saveWorkoutData.id} saveWorkoutData={saveWorkoutData} />
       ))}
     </div>
   );
 };
 
-export default MyPlan;
+export default SaveTab;

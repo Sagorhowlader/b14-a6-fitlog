@@ -1,5 +1,5 @@
 import React from "react";
-import { IWorkout } from "../types/workout.type";
+import { IWorkout } from "../../types/workout.type";
 import Image from "next/image";
 
 type workoutCardProps = {

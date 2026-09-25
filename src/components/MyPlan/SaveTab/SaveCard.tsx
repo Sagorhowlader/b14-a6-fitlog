@@ -2,19 +2,19 @@ import { IWorkout } from "@/types/workout.type";
 import Image from "next/image";
 import React from "react";
 
-type MyPlanCardProps = {
-  workout: IWorkout;
+type SaveCardProps = {
+  saveWorkoutData: IWorkout;
 };
 
-export default function MyPlanCard({ workout }: MyPlanCardProps) {
+export default function SaveCard({ saveWorkoutData }: SaveCardProps) {
   return (
     <section className="flex gap-5 rounded-xl bg-base-100 p-4 shadow-sm">
       <div>
         <Image
-          src={workout.image}
+          src={saveWorkoutData.image}
           width={200}
           height={140}
-          alt={workout.name}
+          alt={saveWorkoutData.name}
           className="h-35 w-50 rounded-lg object-cover"
         />
       </div>
@@ -22,20 +22,20 @@ export default function MyPlanCard({ workout }: MyPlanCardProps) {
       <div className="flex flex-1 justify-between">
         <div className="flex flex-col justify-between">
           <div>
-            <h1 className="text-xl font-bold">{workout.name}</h1>
-            <span className="text-sm text-gray-500">{workout.equipment}</span>
+            <h1 className="text-xl font-bold">{saveWorkoutData.name}</h1>
+            <span className="text-sm text-gray-500">
+              {saveWorkoutData.equipment}
+            </span>
           </div>
           <div className="flex gap-5 text-sm">
-            <span>⏱️ {workout.duration}</span>
-            <span>🔥 {workout.caloriesBurned}</span>
-            <span>⭐ {workout.rating}</span>
+            <span>⏱️ {saveWorkoutData.duration}</span>
+            <span>🔥 {saveWorkoutData.caloriesBurned}</span>
+            <span>⭐ {saveWorkoutData.rating}</span>
           </div>
         </div>
 
         <div className="flex justify-center gap-3">
           <button className="btn btn-primary">Mark As Done</button>
-
-          <button className="btn btn-outline btn-error">Remove</button>
         </div>
       </div>
     </section>

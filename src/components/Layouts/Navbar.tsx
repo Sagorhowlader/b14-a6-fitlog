@@ -2,15 +2,16 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
-import Counter from "./Counter";
+import Counter from "../Shared/Counter";
+import ActiveLink from "./ActiveLink";
 const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        <Link href={"/"}>Workout</Link>
+        <ActiveLink href={"/"}>Workout</ActiveLink>
       </li>
       <li>
-        <Link href={"/my-plan"}>My Plan</Link>
+        <ActiveLink href={"/my-plan"}>My Plan</ActiveLink>
       </li>
     </>
   );
