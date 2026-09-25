@@ -15,7 +15,7 @@ const LibrarySection = async () => {
   const workoutsData = await getWorkoutData();
   console.log(workoutsData);
   return (
-    <section className="grid grid-cols-3 gap-6 p-6">
+    <section id="library" className="grid grid-cols-3 gap-6 p-6">
       {workoutsData.map((workoutData: IWorkout) => (
         <Link href={`workout/${workoutData.id}`} key={workoutData.id}>
           <WorkoutCard workout={workoutData} />
