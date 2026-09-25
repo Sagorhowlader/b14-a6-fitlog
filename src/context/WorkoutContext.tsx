@@ -6,19 +6,25 @@ type WorkoutContextType = {
   setPlanWorkoutData: React.Dispatch<React.SetStateAction<IWorkout[]>>;
   saveWorkoutData: IWorkout[];
   setSaveWorkoutData: React.Dispatch<React.SetStateAction<IWorkout[]>>;
+  sortBy: string;
+  setSortBy: React.Dispatch<React.SetStateAction<string>>;
 };
 type WorkoutContextProps = {
   children: React.ReactNode;
 };
+type SortType = "duration" | "calories" | "rating";
 export const WorkoutContext = createContext<WorkoutContextType | null>(null);
 const WorkoutProvider = ({ children }: WorkoutContextProps) => {
   const [planWorkoutData, setPlanWorkoutData] = useState<IWorkout[]>([]);
   const [saveWorkoutData, setSaveWorkoutData] = useState<IWorkout[]>([]);
+  const [sortBy, setSortBy] = useState<SortType>("duration");
   const shareData = {
     planWorkoutData,
     setPlanWorkoutData,
     saveWorkoutData,
     setSaveWorkoutData,
+    sortBy,
+    setSortBy,
   };
   return (
     <WorkoutContext.Provider value={shareData}>
