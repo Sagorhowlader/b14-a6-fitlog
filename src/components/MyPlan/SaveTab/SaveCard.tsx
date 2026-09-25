@@ -1,6 +1,9 @@
 import { IWorkout } from "@/types/workout.type";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { RxCross1 } from "react-icons/rx";
+import DeleteSaveItems from "../DeleteSaveItems";
 
 type SaveCardProps = {
   saveWorkoutData: IWorkout;
@@ -33,9 +36,13 @@ export default function SaveCard({ saveWorkoutData }: SaveCardProps) {
             <span>⭐ {saveWorkoutData.rating}</span>
           </div>
         </div>
-
-        <div className="flex justify-center gap-3">
-          <button className="btn btn-primary">Mark As Done</button>
+        <div className="flex items-center gap-3.5">
+          <Link href={`/workout/${saveWorkoutData.id}`}>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
+          <DeleteSaveItems cardActive="save" workoutId={saveWorkoutData.id}>
+            <RxCross1 />
+          </DeleteSaveItems>
         </div>
       </div>
     </section>
