@@ -1,57 +1,65 @@
 import React from "react";
 import { IWorkout } from "../../types/workout.type";
 import Image from "next/image";
+import { CiStar, CiStopwatch } from "react-icons/ci";
+import { FaFire } from "react-icons/fa";
 
-type workoutCardProps = {
+type WorkoutCardProps = {
   workout: IWorkout;
 };
 
-const WorkoutCard = ({ workout }: workoutCardProps) => {
+const WorkoutCard = ({ workout }: WorkoutCardProps) => {
   return (
-    <div className="card bg-base-[#9CA3AF] shadow-2xl border border-base-200">
+    <div className="card border border-base-200 bg-base-200 shadow-2xl">
       <figure className="overflow-hidden">
         <Image
           src={workout.image}
           alt={workout.name}
           width={392}
-          height={140}
-          className="w-full h-[240px] object-cover object-center"
+          height={240}
+          className="h-[240px] w-full object-cover object-center"
         />
       </figure>
 
       <div className="card-body">
-        {/* Badges */}
-        <div className="flex gap-2">
-          <div className="flex gap-1.5 p-1">
-            {workout.muscleGroups.map((muscle: string, index: number) => (
-              <div key={index} className="badge badge-primary font-medium">
-                {muscle}
-              </div>
-            ))}
-          </div>
+        {/* Categories */}
+        <div className="flex flex-wrap gap-2">
+          {workout.muscleGroups.map((muscle: string, index: number) => (
+            <div
+              key={index}
+              className="badge rounded-xl bg-fitlog-primary p-2.5 text-xs font-bold text-black"
+            >
+              {muscle}
+            </div>
+          ))}
         </div>
 
         {/* Workout name + equipment */}
         <div className="mt-1">
           <h2 className="card-title text-xl font-bold">{workout.name}</h2>
 
-          <p className="text-sm text-base-content/60 mt-1">
+          <p className="mt-1 text-sm text-base-content/60">
             {workout.equipment}
           </p>
         </div>
 
-        {/* Workout information */}
-        <div className="card-actions justify-start mt-2">
-          <div className="badge badge-outline gap-1 px-3 py-3">
-            ⏱️ {workout.duration}
+        <div className="border-t border-gray-700"></div>
+
+        {/* Workout stats */}
+        <div className="flex flex-wrap justify-start gap-4">
+          <div className="flex items-center gap-1 text-[14px] text-base-content/60">
+            <CiStopwatch />
+            {workout.duration} min
           </div>
 
-          <div className="badge badge-outline gap-1 px-3 py-3">
-            🔥 {workout.caloriesBurned}
+          <div className="flex items-center gap-1 text-[14px] text-base-content/60">
+            <FaFire />
+            {workout.caloriesBurned} kcal
           </div>
 
-          <div className="badge badge-outline gap-1 px-3 py-3">
-            ⭐ {workout.rating}
+          <div className="flex items-center gap-1 text-[14px] text-base-content/60">
+            <CiStar />
+            {workout.rating}
           </div>
         </div>
       </div>
