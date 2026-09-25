@@ -1,18 +1,18 @@
 "use client";
 import { IWorkout } from "@/types/workout.type";
 import React, { createContext, useState } from "react";
+type WorkoutContextProps = {
+  children: React.ReactNode;
+};
+type SortType = "duration" | "calories" | "rating";
 type WorkoutContextType = {
   planWorkoutData: IWorkout[];
   setPlanWorkoutData: React.Dispatch<React.SetStateAction<IWorkout[]>>;
   saveWorkoutData: IWorkout[];
   setSaveWorkoutData: React.Dispatch<React.SetStateAction<IWorkout[]>>;
   sortBy: string;
-  setSortBy: React.Dispatch<React.SetStateAction<string>>;
+  setSortBy: React.Dispatch<React.SetStateAction<SortType>>;
 };
-type WorkoutContextProps = {
-  children: React.ReactNode;
-};
-type SortType = "duration" | "calories" | "rating";
 export const WorkoutContext = createContext<WorkoutContextType | null>(null);
 const WorkoutProvider = ({ children }: WorkoutContextProps) => {
   const [planWorkoutData, setPlanWorkoutData] = useState<IWorkout[]>([]);

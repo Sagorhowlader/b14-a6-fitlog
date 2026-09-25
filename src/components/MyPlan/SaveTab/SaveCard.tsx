@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { RxCross1 } from "react-icons/rx";
-import DeleteSaveItems from "../MyPlanShared/DeleteSaveItems";
+import DeleteSaveItems from "../DeleteSaveItems";
 
 type SaveCardProps = {
   saveWorkoutData: IWorkout;

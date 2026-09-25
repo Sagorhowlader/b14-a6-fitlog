@@ -14,7 +14,11 @@ export default function ActiveLink({ href, children }: ActiveLinkProps) {
   return (
     <Link
       href={href}
-      className={pathname === href ? "text-primary font-bold" : ""}
+      className={
+        pathname === href
+          ? "bg-[#1A2312]/100 text-fitlog-primary font-bold rounded-full"
+          : ""
+      }
     >
       {children}
     </Link>

@@ -16,7 +16,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar shadow-sm mb-11">
+    <div className="navbar min-h-20 border-b-2 border-b-base-200 mb-11 flex items-center text-center justify-center">
       <div className="navbar-start">
         {/* Mobile Menu Design */}
         <div className="dropdown">
@@ -30,13 +30,12 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           {/* HAMBURGER DESIGN FOR MOBILE END */}
@@ -58,18 +57,14 @@ const Navbar = () => {
         {/* Large Screen Design Start */}
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{menuItems}</ul>
+        <ul className="menu menu-horizontal px-4">{menuItems}</ul>
       </div>
-      <div className="navbar-end">
-        <Link href={"/my-plan"}>
-          <button className="btn btn-ghost">
-            Plan <Counter mode="plan" />
-          </button>
+      <div className="navbar-end gap-1">
+        <Link href={"/my-plan"} className="btn btn-ghost">
+          Plan <Counter mode="plan" />
         </Link>
-        <Link href={"/my-plan"}>
-          <button className="btn btn-ghost">
-            Saved <Counter mode="save" />
-          </button>
+        <Link href={"/my-plan"} className="btn btn-ghost">
+          Saved <Counter mode="save" />
         </Link>
       </div>
     </div>

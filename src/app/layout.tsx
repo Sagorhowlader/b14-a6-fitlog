@@ -28,13 +28,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       data-theme="dark"
     >
-      <body className="container mx-auto">
-        <WorkoutProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <ToastContainer />
-        </WorkoutProvider>
+      <body className="bg-black/90">
+        <div className="container mx-auto">
+          <WorkoutProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <ToastContainer />
+          </WorkoutProvider>
+        </div>
       </body>
     </html>
   );

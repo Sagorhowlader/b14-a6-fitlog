@@ -18,7 +18,7 @@ const Counter = ({ mode }: CounterProps) => {
 
   if (mode === "plan") {
     return (
-      <div className="badge badge-sm badge-primary">
+      <div className="badge badge-sm min-w-6 rounded-full border-0 bg-fitlog-primary px-2 font-semibold text-black">
         {planWorkoutData.length}
       </div>
     );
@@ -26,7 +26,7 @@ const Counter = ({ mode }: CounterProps) => {
 
   if (mode === "save") {
     return (
-      <div className="badge badge-sm badge-secondary">
+      <div className="badge badge-sm min-w-6 rounded-3xl border border-base-content bg-transparent px-2 font-semibold">
         {saveWorkoutData.length}
       </div>
     );

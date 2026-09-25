@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
-
 html {
     scroll-behavior: smooth;
 }
 
+@theme {
+    --color-fitlog-primary: #ccff00;
+}
