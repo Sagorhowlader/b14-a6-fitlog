@@ -7,9 +7,14 @@ import SaveTab from "./SaveTab/SaveTab";
 type MyPlanTabsProps = {
   activeTab: "plan" | "saved";
   setActiveTab: React.Dispatch<React.SetStateAction<"plan" | "saved">>;
+  searchText: string;
 };
 
-const MyPlanTabs = ({ activeTab, setActiveTab }: MyPlanTabsProps) => {
+const MyPlanTabs = ({
+  activeTab,
+  setActiveTab,
+  searchText,
+}: MyPlanTabsProps) => {
   return (
     <div className="flex flex-col gap-6">
       {/* Toggle Tabs */}
@@ -38,7 +43,13 @@ const MyPlanTabs = ({ activeTab, setActiveTab }: MyPlanTabsProps) => {
       </div>
 
       {/* Tab Content */}
-      <div>{activeTab === "plan" ? <PlanTab /> : <SaveTab />}</div>
+      <div>
+        {activeTab === "plan" ? (
+          <PlanTab searchText={searchText} />
+        ) : (
+          <SaveTab searchText={searchText} />
+        )}
+      </div>
     </div>
   );
 };
