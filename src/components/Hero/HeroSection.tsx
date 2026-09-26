@@ -22,7 +22,7 @@ const HeroSection = () => {
         </p>
 
         <a href="#library">
-          <button className="btn rounded-[6px] bg-fitlog-primary px-3 py-1.5 text-xs font-bold text-black">
+          <button className="btn rounded-md bg-fitlog-primary px-3 py-1.5 text-xs font-bold text-black">
             BROWSE WORKOUTS
             <FaArrowRight />
           </button>

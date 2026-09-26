@@ -1,5 +1,4 @@
 import MyPlan from "@/components/MyPlan/MyPlan";
-import MyPlanTabs from "@/components/MyPlan/MyPlanTabs";
 
 const MyPlanPage = () => {
   return (
