@@ -18,7 +18,7 @@ const AddPlanButton = ({ workout }: AddPlanButtonProps) => {
       (data) => data.id === workout.id,
     );
     if (isWorkoutAvailable) {
-      toast.warning(`${workout.name} is already in your plan`, {
+      toast.warning(`${workout.name} is Already in Your Plan`, {
         position: "top-right",
         autoClose: 3000,
         theme: "light",
@@ -28,7 +28,7 @@ const AddPlanButton = ({ workout }: AddPlanButtonProps) => {
     }
     setPlanWorkoutData((prev) => [...prev, workout]);
 
-    toast.success(`${workout.name} added to Plan`, {
+    toast.success(`${workout.name} Added to Plan`, {
       position: "top-right",
       autoClose: 3000,
       theme: "light",

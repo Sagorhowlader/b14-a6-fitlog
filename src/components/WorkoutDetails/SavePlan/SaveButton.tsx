@@ -18,7 +18,7 @@ const SaveButton = ({ workout }: SaveButtonProps) => {
       (data) => data.id === workout.id,
     );
     if (isWorkoutAvailable) {
-      toast.warning(`${workout.name} is already in your plan`, {
+      toast.warning(`${workout.name} is Already in Your Save`, {
         position: "top-right",
         autoClose: 3000,
         theme: "light",
@@ -28,7 +28,7 @@ const SaveButton = ({ workout }: SaveButtonProps) => {
     }
     setSaveWorkoutData((prev) => [...prev, workout]);
 
-    toast.success(`${workout.name} added to Plan`, {
+    toast.success(`${workout.name} added to Save`, {
       position: "top-right",
       autoClose: 3000,
       theme: "light",
