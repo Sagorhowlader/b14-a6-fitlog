@@ -4,8 +4,7 @@ FitLog is a workout library track your fitness log for daily built with **Next.j
 
 ## Live Demo
 
-- **Live Site:** _Add your Vercel link here_
-- **GitHub Repository:** _Add your GitHub repository link here_
+- **Live Site:** [Live Demo](https://b14-a6-fitlog-rose.vercel.app/)
 
 ## Technologies Used
 
