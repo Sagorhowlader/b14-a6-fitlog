@@ -12,17 +12,18 @@ type MarkAsDoneProps = {
 
 const MarkAsDone = ({ workout }: MarkAsDoneProps) => {
   const context = useContext(WorkoutContext);
+
   if (!context) {
-    throw new Error("DeleteSaveItems must be used inside WorkoutProvider");
+    throw new Error("MarkAsDone must be used inside WorkoutProvider");
   }
-  const { planWorkoutData, setPlanWorkoutData } = context;
+
+  const { setPlanWorkoutData } = context;
+
   const handleMarkAsDone = () => {
-    const currentPlanWorkoutData = planWorkoutData.filter(
-      (planData) => planData.id != workout.id,
+    setPlanWorkoutData((prev) =>
+      prev.filter((planData) => planData.id !== workout.id),
     );
-    if (currentPlanWorkoutData) {
-      setPlanWorkoutData([...currentPlanWorkoutData]);
-    }
+
     toast.success(`${workout.name} marked as done!`, {
       position: "top-right",
       autoClose: 3000,

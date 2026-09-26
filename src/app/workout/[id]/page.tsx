@@ -17,6 +17,7 @@ const getWorkoutDetails = async (id: string) => {
 const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
   const { id } = await params;
   const workoutDetailsData: IWorkout = await getWorkoutDetails(id);
+ 
   return (
     <>
       {workoutDetailsData ? (
