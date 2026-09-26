@@ -1,7 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
-import MyPlanCard from "./PlanTab/PlanCard";
-import { WorkoutContext } from "@/context/WorkoutContext";
+import React, { useState } from "react";
 import MyPlanStatistics from "./MyPlanStatistics";
 import MyPlanTabs from "./MyPlanTabs";
 import SortItems from "./MyPlanShared/SortItems";

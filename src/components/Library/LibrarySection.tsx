@@ -2,10 +2,13 @@ import { IWorkout } from "@/types/workout.type";
 import React from "react";
 import WorkoutCard from "./WorkoutCard";
 import Link from "next/link";
-
+import NotFound from "@/app/not-found";
 const getWorkoutData = async () => {
   try {
     const response = await fetch("https://api.abcz.workers.dev/api/fitlog");
+    if (!response.ok) {
+      <NotFound />;
+    }
 
     const data = await response.json();
 
@@ -29,7 +32,7 @@ const LibrarySection = async () => {
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {workoutsData.map((workoutData: IWorkout) => (
+        {workoutsData?.map((workoutData: IWorkout) => (
           <Link href={`/workout/${workoutData.id}`} key={workoutData.id}>
             <WorkoutCard workout={workoutData} />
           </Link>
