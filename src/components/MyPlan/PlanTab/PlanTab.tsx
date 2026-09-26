@@ -23,7 +23,7 @@ const PlanTab = () => {
   return (
     <>
       {planWorkoutData?.length > 0 ? (
-        <div className="flex flex-col gap-3.5 bg-base-200">
+        <div className="flex flex-col gap-4">
           {sortedWorkouts.map((workoutData) => (
             <PlanCard key={workoutData.id} workout={workoutData} />
           ))}

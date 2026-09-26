@@ -8,12 +8,6 @@ import SortItems from "./MyPlanShared/SortItems";
 
 const MyPlan = () => {
   const [activeTab, setActiveTab] = useState<"plan" | "saved">("plan");
-  
-
-  // const handleTab = (tab: "plan" | "saved") => {
-  //   setActiveTab(tab);
-  // };
-
   return (
     <div className="flex flex-col gap-2.5">
       <MyPlanStatistics activeTab={activeTab} />

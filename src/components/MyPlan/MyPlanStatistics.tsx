@@ -45,32 +45,28 @@ const MyPlanStatistics = ({ activeTab }: MyPlanStatisticsProps) => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div className="bg-base-200 rounded-2xl p-5">
+    <div className="rounded-2xl bg-base-200 p-8">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div className="flex flex-col gap-1">
-          <span className="text-sm font-medium text-base-content/60">
+          <span className="text-lg font-bold text-base-content/60">
             Exercises
           </span>
-          <span className="text-3xl font-bold">
+          <span className="text-3xl font-bold text-fitlog-primary">
             {activeTab === "plan"
               ? planWorkoutData.length
               : saveWorkoutData.length}
           </span>
         </div>
-      </div>
 
-      <div className="bg-base-200 rounded-2xl p-5">
-        <div className="flex flex-col gap-1">
-          <span className="text-sm font-medium text-base-content/60">
+        <div className="flex flex-col gap-1 sm:border-l sm:border-base-300 sm:pl-4">
+          <span className="text-lg font-bold text-base-content/60">
             Minutes
           </span>
           <span className="text-3xl font-bold">{totalMinutes()}</span>
         </div>
-      </div>
 
-      <div className="bg-base-200 rounded-2xl p-5">
-        <div className="flex flex-col gap-1">
-          <span className="text-sm font-medium text-base-content/60">
+        <div className="flex flex-col gap-1 sm:border-l sm:border-base-300 sm:pl-4">
+          <span className="text-lg font-bold text-base-content/60">
             Calories
           </span>
           <span className="text-3xl font-bold">{totalCalories()}</span>
