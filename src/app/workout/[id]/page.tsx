@@ -9,7 +9,6 @@ type WorkoutDetailsPageProps = { params: Promise<{ id: string }> };
 const getWorkoutDetails = async (id: string) => {
   const response = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
   const data = await response.json();
-  console.log("response", response);
   if (!response.ok) {
     notFound();
   }
@@ -18,7 +17,6 @@ const getWorkoutDetails = async (id: string) => {
 const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
   const { id } = await params;
   const workoutDetailsData: IWorkout = await getWorkoutDetails(id);
-  console.log("workoutDetailsData", workoutDetailsData);
   return (
     <>
       {workoutDetailsData ? (

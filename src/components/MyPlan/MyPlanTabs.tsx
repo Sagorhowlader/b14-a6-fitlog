@@ -13,7 +13,7 @@ const MyPlanTabs = ({ activeTab, setActiveTab }: MyPlanTabsProps) => {
   return (
     <div className="flex flex-col gap-6">
       {/* Toggle Tabs */}
-      <div className="flex w-fit gap-1 rounded-full bg-base-300 p-1">
+      <div className="flex w-fit self-center gap-1 rounded-full bg-base-300 p-1 lg:self-start">
         <button
           onClick={() => setActiveTab("plan")}
           className={`btn rounded-full border-0 px-6 shadow-none ${

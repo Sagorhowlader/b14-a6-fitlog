@@ -14,20 +14,20 @@ type PlanCardProps = {
 
 export default function PlanCard({ workout }: PlanCardProps) {
   return (
-    <section className="flex items-center gap-5 rounded-xl bg-base-200 p-4 shadow-sm">
+    <section className="flex flex-col gap-5 rounded-xl bg-base-200 p-4 shadow-sm lg:flex-row lg:items-center">
       {/* Image */}
       <Image
         src={workout.image}
         width={200}
         height={140}
         alt={workout.name}
-        className="h-35 w-50 rounded-lg object-cover"
+        className="h-50 w-full rounded-lg object-cover lg:h-35 lg:w-50"
       />
 
       {/* Text */}
-      <div className="flex flex-1 flex-col justify-between gap-4">
+      <div className="flex flex-1 flex-col gap-4">
         <div>
-          <h1 className="text-xl font-oswald font-bold uppercase">
+          <h1 className="font-oswald text-xl font-bold uppercase">
             {workout.name}
           </h1>
 
@@ -36,7 +36,7 @@ export default function PlanCard({ workout }: PlanCardProps) {
           </span>
         </div>
 
-        <div className="flex gap-5 text-sm text-base-content/70">
+        <div className="flex flex-wrap gap-4 text-sm text-base-content/70">
           <span className="flex items-center gap-1">
             <CiStopwatch className="text-fitlog-primary" />
             {workout.duration} min
@@ -55,13 +55,14 @@ export default function PlanCard({ workout }: PlanCardProps) {
       </div>
 
       {/* Buttons */}
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap gap-2 lg:items-center">
         <Link
           href={`/workout/${workout.id}`}
-          className="btn btn-outline border-white/80 rounded-full w-36"
+          className="btn btn-outline w-full rounded-full border-white/80 sm:w-36"
         >
           View Details
         </Link>
+
         <MarkAsDone workout={workout} />
 
         <DeleteSaveItems cardActive="plan" workout={workout}>

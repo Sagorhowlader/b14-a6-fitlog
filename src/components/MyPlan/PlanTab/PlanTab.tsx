@@ -5,10 +5,13 @@ import NoItemsSave from "../MyPlanShared/NoItemsSave";
 
 const PlanTab = () => {
   const context = useContext(WorkoutContext);
+
   if (!context) {
     throw new Error("MyPlan must be used inside WorkoutProvider");
   }
+
   const { planWorkoutData, sortBy } = context;
+
   const sortedWorkouts = useMemo(() => {
     const workouts = [...planWorkoutData];
 
@@ -20,9 +23,10 @@ const PlanTab = () => {
       return workouts.sort((a, b) => a.duration - b.duration);
     }
   }, [planWorkoutData, sortBy]);
+
   return (
     <>
-      {planWorkoutData?.length > 0 ? (
+      {planWorkoutData.length > 0 ? (
         <div className="flex flex-col gap-4">
           {sortedWorkouts.map((workoutData) => (
             <PlanCard key={workoutData.id} workout={workoutData} />

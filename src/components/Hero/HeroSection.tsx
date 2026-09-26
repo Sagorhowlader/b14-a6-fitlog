@@ -5,18 +5,18 @@ import { FaArrowRight } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="mx-4 my-8 flex flex-col items-center justify-between gap-8 rounded-2xl bg-base-200 p-6 sm:mx-6 sm:p-8 lg:my-12 lg:flex-row lg:p-14">
+    <section className="mx-4 my-8 flex flex-col items-center justify-between gap-8 rounded-2xl bg-base-200 p-6 text-center sm:mx-6 sm:p-8 lg:my-12 lg:flex-row lg:p-14 lg:text-left">
       {/* Text */}
-      <div className="flex w-full flex-1 flex-col items-start gap-5">
+      <div className="flex w-full flex-1 flex-col items-center gap-5 lg:items-start">
         <p className="text-xs font-bold uppercase text-fitlog-primary">
           WORKOUT LIBRARY
         </p>
 
-        <h1 className="font-oswald text-4xl font-bold uppercase sm:text-5xl lg:text-6xl">
+        <h1 className="font-oswald text-2xl font-bold uppercase sm:text-5xl lg:text-6xl">
           TRAIN WITH INTENT. LOG EVERY SET.
         </h1>
 
-        <p className="max-w-120.25 text-base text-base-content/70 md:text-lg">
+        <p className="max-w-120.25 text-xs text-base-content/70 md:text-lg">
           FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into
           today&apos;s plan, and watch the week&apos;s work add up.
         </p>
