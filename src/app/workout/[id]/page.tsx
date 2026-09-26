@@ -6,6 +6,15 @@ import Image from "next/image";
 import React from "react";
 import { notFound } from "next/navigation";
 type WorkoutDetailsPageProps = { params: Promise<{ id: string }> };
+export async function generateStaticParams() {
+  const workouts = await fetch("https://api.abcz.workers.dev/api/fitlog").then(
+    (res) => res.json(),
+  );
+
+  return workouts.map((workout: IWorkout) => ({
+    id: String(workout.id),
+  }));
+}
 const getWorkoutDetails = async (id: string) => {
   const response = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
   const data = await response.json();
@@ -14,10 +23,11 @@ const getWorkoutDetails = async (id: string) => {
   }
   return data;
 };
+
 const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
   const { id } = await params;
   const workoutDetailsData: IWorkout = await getWorkoutDetails(id);
- 
+
   return (
     <>
       {workoutDetailsData ? (
