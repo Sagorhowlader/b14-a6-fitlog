@@ -54,7 +54,7 @@ export default function SaveCard({ saveWorkoutData }: SaveCardProps) {
       </div>
 
       {/* Buttons */}
-      <div className="flex flex-wrap gap-2 lg:items-center">
+      <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
         <Link
           href={`/workout/${saveWorkoutData.id}`}
           className="btn btn-outline w-full rounded-full border-white/80 sm:w-36"

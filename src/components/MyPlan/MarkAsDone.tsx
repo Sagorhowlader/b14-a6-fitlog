@@ -34,7 +34,7 @@ const MarkAsDone = ({ workout }: MarkAsDoneProps) => {
   return (
     <button
       onClick={handleMarkAsDone}
-      className="btn w-36 rounded-full bg-fitlog-primary text-black hover:bg-fitlog-primary/80"
+      className="btn w-full rounded-full bg-fitlog-primary text-black hover:bg-fitlog-primary/80 sm:w-36"
     >
       <FaCheck />
       Mark As Done

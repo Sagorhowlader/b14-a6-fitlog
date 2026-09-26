@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💪 FitLog – Workout Web APP
 
-## Getting Started
+FitLog is a workout library track your fitness log for daily built with **Next.js**, **React**, **TypeScript**, **Tailwind CSS**, and **DaisyUI**. Users can explore exercises, view detailed workout information, create today's workout plan, save workouts for later, and track live workout statistics.
 
-First, run the development server:
+## Live Demo
+
+- **Live Site:** _Add your Vercel link here_
+- **GitHub Repository:** _Add your GitHub repository link here_
+
+## Technologies Used
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- React Icons
+- React Toastify
+
+## Key Features
+
+1. **Workout Library** – Browse all exercises from the FitLog API in a grid layout 3\*4 style. Each Card Show image,category,workout name, list of equipment, gym Stats.
+2. **Detailed Workout Pages** – You can browse individual Workout Details Page. where equipment, difficulty, sets, reps, duration, calories, rating, and step-by-step instructions. their are two button name "Today's Plan" or 'Save' you can add the workout for today's plan also you can save for future. when you add a counter is show in navbar.
+3. **Today's Plan** – Add workouts to today's plan with live counters and statistics for exercises, minutes, and calories. Their are also button for View Details Page, Mark as Done and Delete Items from Save Plan. Mark as Done just delete the item form save.
+4. **Save for Later** – Save favorite workouts and sort them by Duration, Calories, or Rating. same as Today's plan just mark as done button not here. 5.**Sort by** - Their are a Sort by Functionality for sort the current save items using: Duration, Calories, Rating
+5. **Modern User Experience** – Responsive design, loading screens, toast notifications, and a custom 404 page for invalid routes.
+
+## Responsive Design
+
+The application is fully responsive and works smoothly on:
+
+- 📱 Mobile
+- 📱 Tablet
+- 💻 Desktop
+
+## Backend API Used
+
+- **All Workouts:** `https://api.abcz.workers.dev/api/fitlog`
+- **Workout Details:** `https://api.abcz.workers.dev/api/fitlog/:id`
+
+## ⚙️ Run Locally
 
 ```bash
+git clone https://github.com/Sagorhowlader/b14-a6-fitlog.git
+cd b14-a6-fitlog
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open `http://localhost:3000` in your browser.

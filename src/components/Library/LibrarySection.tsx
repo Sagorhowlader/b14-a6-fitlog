@@ -2,12 +2,12 @@ import { IWorkout } from "@/types/workout.type";
 import React from "react";
 import WorkoutCard from "./WorkoutCard";
 import Link from "next/link";
-import NotFound from "@/app/not-found";
+import { notFound } from "next/navigation";
 const getWorkoutData = async () => {
   try {
     const response = await fetch("https://api.abcz.workers.dev/api/fitlog");
     if (!response.ok) {
-      <NotFound />;
+      notFound();
     }
 
     const data = await response.json();
