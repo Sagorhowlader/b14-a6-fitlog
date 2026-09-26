@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const NoItemsSave = () => {
   return (
@@ -18,6 +19,7 @@ const NoItemsSave = () => {
         className="btn bg-fitlog-primary text-black font-bold rounded-full px-4 py-3 gap-2"
       >
         Go to workouts
+        <FaArrowRight />
       </Link>
     </div>
   );

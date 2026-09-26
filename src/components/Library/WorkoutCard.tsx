@@ -17,7 +17,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
           alt={workout.name}
           width={392}
           height={240}
-          className="h-[240px] w-full object-cover object-center"
+          className="h-60 w-full object-cover object-center"
         />
       </figure>
 
